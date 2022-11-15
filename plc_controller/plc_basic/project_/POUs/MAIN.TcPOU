@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="MAIN" Id="{38e7ac3d-a4b5-4c4e-904d-27c6290e435e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	MyBoolean : BOOL;
+	
+	bRunMath : BOOL;
+	
+	iValue1 : DINT := 20;
+	iValue2 : DINT;
+	
+	i : INT;
+	j : INT;
+	c : DINT;
+	
+	sMyString : STRING;
+	sMyNumString : STRING[255];
+	
+	i_Num_from_arr : DINT;
+	i_len_arr_B : INT;
+	arr_A : ARRAY [0..10] OF DINT;
+	arr_B : ARRAY [0..4] OF DINT :=[20, 40, 60 ,80, 100];
+	
+	// timers
+	fb_My_timer : TON;
+	// tiggers
+	fb_my_trigger : R_TRIG; // Counter 
+	
+	// Timer
+	fb_MI1_Timer_Increase_Speed: TON;
+	
+	// Speed setup
+	f_MI1_Initial_Speed: REAL := 20;
+	f_MI1_Constant_Speed: REAL := 60;
+	f_MI1_Max_Speed : REAL := 120;
+END_VAR
+
+VAR_OUTPUT
+	// Speed Output
+	f_MI1_Speed: REAL;
+END_VAR
+
+	
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+f_MI1_Speed:= f_MI1_Initial_Speed;
+
+IF MyBoolean THEN
+	REPEAT
+		fb_MI1_Timer_Increase_Speed(
+			IN:=MyBoolean,
+			PT:= T#20S);
+		IF fb_MI1_Timer_Increase_Speed.Q THEN
+			f_MI1_Speed := f_MI1_Speed + f_MI1_Initial_Speed;
+		END_IF
+		
+	UNTIL 
+		f_MI1_Speed > 120 
+	END_REPEAT
+	
+END_IF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="265" Count="0" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="311" Count="0" />
+      <LineId Id="193" Count="0" />
+      <LineId Id="211" Count="0" />
+      <LineId Id="216" Count="1" />
+      <LineId Id="214" Count="0" />
+      <LineId Id="261" Count="2" />
+      <LineId Id="215" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="264" Count="0" />
+      <LineId Id="213" Count="0" />
+      <LineId Id="268" Count="0" />
+      <LineId Id="157" Count="16" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="57" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
