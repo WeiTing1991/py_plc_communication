@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.32">
-	<Project ProjectGUID="{B67C6A62-822B-4B06-A167-2CABF3A41208}" Target64Bit="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{7F3121E2-F6E7-49D3-88A1-A7C858722C0D}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
+			<Settings>
+				<IoIdleTask CycleTime="100000"/>
+			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -9,9 +12,9 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{9FF3A9FA-526E-4A74-B13E-C85F92DD7870}" Name="project_" PrjFilePath="project_\project_.plcproj" TmcFilePath="project_\project_.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="project_\project_.tmc" TmcHash="{3D0CE240-ED1C-572C-BB80-1B45C5AA1767}">
-					<Name>project_ Instance</Name>
+			<Project GUID="{FC305C75-BBE2-4CE8-A3D2-5C6FB7F115B7}" Name="basic_motor_control" PrjFilePath="basic_motor_control\basic_motor_control.plcproj" TmcFilePath="basic_motor_control\basic_motor_control.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{354FA84A-184F-59E2-4024-775523342CD9}">
+					<Name>basic_motor_control Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
