@@ -6,13 +6,20 @@ VAR
 	MyBoolean : BOOL;
 	MyBoolean_2: BOOL;
 	
+	MyInt : INT;
+	MyInt_2 : INT;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+
+MyBoolean := TRUE;
+MyInt:=3;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="14" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>

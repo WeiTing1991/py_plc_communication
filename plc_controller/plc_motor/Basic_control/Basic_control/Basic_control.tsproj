@@ -13,7 +13,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{FC305C75-BBE2-4CE8-A3D2-5C6FB7F115B7}" Name="basic_motor_control" PrjFilePath="basic_motor_control\basic_motor_control.plcproj" TmcFilePath="basic_motor_control\basic_motor_control.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{354FA84A-184F-59E2-4024-775523342CD9}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="basic_motor_control\basic_motor_control.tmc" TmcHash="{80D2CD47-765E-5023-A49B-FA7209FE5D04}">
 					<Name>basic_motor_control Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
